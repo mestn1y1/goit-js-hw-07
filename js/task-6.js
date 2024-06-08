@@ -14,6 +14,7 @@ boxesContainer.style.flexWrap = "wrap";
 
 const addBox = (amount) => {
   destroyBox();
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.backgroundColor = getRandomHexColor();
@@ -22,6 +23,7 @@ const addBox = (amount) => {
     box.style.margin = `${20}px`;
     boxesContainer.appendChild(box);
   }
+  boxesContainer.appendChild(fragment);
 };
 
 createBoxes.addEventListener("click", () => {
